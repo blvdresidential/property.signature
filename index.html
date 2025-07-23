@@ -104,18 +104,18 @@
 
       let signatureHTML = `
         <table cellpadding="0" cellspacing="0">
-          ${name ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 15pt; font-weight: bold;">${name}</td></tr>` : ''}
-          ${title ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14pt; color: #899BA2;">${title}</td></tr>` : ''}
+          ${name ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 11pt; font-weight: bold;">${name}</td></tr>` : ''}
+          ${title ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2;">${title}</td></tr>` : ''}
           <tr><td style="font-size: 6px;">&nbsp;</td></tr>
-          ${property ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;"><strong style="font-family: Aptos, sans-serif; font-size: 14px;">${property}</strong></td></tr>` : ''}
-          ${email ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;"><a href="mailto:${email}" style="font-family: Aptos, sans-serif; font-size: 14px; color: #899BA2; text-decoration: none;">${email}</a></td></tr>` : ''}
-          ${phone ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;">${phone}</td></tr>` : ''}
-          ${website ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;"><a href="${website}" style="font-family: Aptos, sans-serif; font-size: 14px; color: #899BA2; text-decoration: none;">${displayWebsite}</a></td></tr>` : ''}
+          ${property ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><strong style="font-family: Aptos, sans-serif; font-size: 10pt;">${property}</strong></td></tr>` : ''}
+          ${email ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><a href="mailto:${email}" style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2; text-decoration: none;">${email}</a></td></tr>` : ''}
+          ${phone ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;">${phone}</td></tr>` : ''}
+          ${website ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><a href="${website}" style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2; text-decoration: none;">${displayWebsite}</a></td></tr>` : ''}
           ${(address || cityStateZip) ? `<tr><td style="font-size: 6px;">&nbsp;</td></tr>` : ''}
-          ${address ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;">${address}</td></tr>` : ''}
-          ${cityStateZip ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 14px;">${cityStateZip}</td></tr>` : ''}
+          ${address ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;">${address}</td></tr>` : ''}
+          ${cityStateZip ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;">${cityStateZip}</td></tr>` : ''}
           <tr><td style="font-size: 6px;">&nbsp;</td></tr>
-          <tr><td style="font-family: Aptos, sans-serif; font-size: 14px; font-style: italic; color: #666;">Professionally managed by</td></tr>
+          <tr><td style="font-family: Aptos, sans-serif; font-size: 10pt; font-style: italic; color: #666;">Professionally managed by</td></tr>
           <tr><td style="padding-top: 5px;"><img src="${logoUrl}" alt="Company Logo" style="display: block;"></td></tr>
         </table>
       `;
