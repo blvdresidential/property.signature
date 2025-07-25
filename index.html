@@ -3,38 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>Property Staff - Email Signature Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Aptos', sans-serif;
-      margin: 40px;
+      margin: 0;
+      padding: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #f9f9f9;
     }
+
+    h1, h2 {
+      font-size: 1.5rem;
+      margin: 0.5em 0;
+    }
+
     label {
       display: block;
       margin-top: 10px;
     }
+
     input {
-      width: 300px;
-      padding: 5px;
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
+
+    small {
+      display: block;
+      margin-bottom: 12px;
+      color: #C00000;
+      font-style: italic;
+      font-size: 9pt;
+    }
+
+    button {
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
     #signature {
       margin-top: 20px;
       padding: 15px;
       border: 1px solid #ccc;
+      background-color: #fff;
+      overflow-x: auto;
     }
+
     .signature-preview {
-      margin-top: 20px;
+      margin-top: 30px;
       border-top: 2px solid #ccc;
-      padding-top: 10px;
+      padding-top: 20px;
     }
-    button {
-      margin-top: 10px;
-      margin-right: 10px;
-      padding: 8px 14px;
-      font-size: 14px;
-    }
+
     .top-banner {
-      max-width: 200px;
+      max-width: 100%;
+      height: auto;
       margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      input {
+        width: 300px;
+      }
     }
   </style>
 </head>
@@ -48,31 +108,31 @@
 
   <form id="sigForm">
     <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName"><br>
-  
+    <input type="text" id="fullName">
+
     <label for="jobTitle">Job Title:</label>
-    <input type="text" id="jobTitle"><br>
-  
+    <input type="text" id="jobTitle">
+
     <label for="property">Property Name(s):</label>
-    <input type="text" id="property"><br>
-  
+    <input type="text" id="property">
+
     <label for="address">Property Street Address:</label>
-    <input type="text" id="address"><br>
-  
+    <input type="text" id="address">
+
     <label for="cityStateZip">City, State, Zip:</label>
-    <input type="text" id="cityStateZip"><br>
-  
-    <small style="color: #C00000; font-style: italic; font-size: 9pt;">
+    <input type="text" id="cityStateZip">
+
+    <small>
       Make sure to include suite numbers and use proper address formatting.
-    </small><br>
-  
+    </small>
+
     <label for="phone">Property Phone:</label>
-    <input type="text" id="phone" value="123.456.7890"><br>
-  
+    <input type="text" id="phone" value="123.456.7890">
+
     <label for="website">Property Website:</label>
-    <input type="text" id="website" value="http://"><br>
-  
-    <small style="color: #C00000; font-style: italic; font-size: 9pt;">
+    <input type="text" id="website" value="http://">
+
+    <small>
       Make sure to Copy & Paste your property website address directly from an address bar. Do not type it in manually. Please remove any forward slashes "/" at the end.
     </small>
   </form>
@@ -81,12 +141,12 @@
     <h3>Generated Signature:</h3>
     <div id="signature"></div>
 
-    <div>
+    <div style="margin-top: 15px;">
+      <a href="#" style="color: #C00000; font-weight: bold; font-size: 12pt; text-decoration: none;">
+        ATTENTION: Before you move forward, be sure to double-check spelling, verify the accuracy of the phone numbers and address, and test all hyperlinks to ensure they lead to the correct destinations.
+      </a>
     </div>
-    <div>
-      <a href="#" style="color: #C00000; font-weight: bold; font-size: 12pt; text-decoration: none;">ATTENTION: Before you move forward, be sure to double-check spelling, verify the accuracy of the phone numbers and address, and test all hyperlinks to ensure they lead to the correct destinations.</a>
-    </div>
-    
+
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
 
@@ -117,12 +177,12 @@
           ${name ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 11pt; font-weight: bold;">${name}</td></tr>` : ''}
           ${title ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2;">${title}</td></tr>` : ''}
           <tr><td style="font-size: 8px;">&nbsp;</td></tr>
-          ${property ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><strong style="font-family: Aptos, sans-serif; font-size: 10pt;">${property}</strong></td></tr>` : ''}
+          ${property ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><strong>${property}</strong></td></tr>` : ''}
           ${address ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2;">${address}</td></tr>` : ''}
           ${cityStateZip ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2;">${cityStateZip}</td></tr>` : ''}
           <tr><td style="font-size: 5px;">&nbsp;</td></tr>
           ${phone ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;">${phone}</td></tr>` : ''}
-          ${website ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><a href="${website}" style="font-family: Aptos, sans-serif; font-size: 10pt; color: #899BA2; text-decoration: none;">${displayWebsite}</a></td></tr>` : ''}
+          ${website ? `<tr><td style="font-family: Aptos, sans-serif; font-size: 10pt;"><a href="${website}" style="color: #899BA2; text-decoration: none;">${displayWebsite}</a></td></tr>` : ''}
           <tr><td style="font-size: 8px;">&nbsp;</td></tr>
           <tr><td style="font-family: Aptos, sans-serif; font-size: 9pt; font-style: italic; color: #666;">Professionally managed by</td></tr>
           <tr><td style="padding-top: 5px;"><img src="${logoUrl}" alt="Company Logo" style="display: block;"></td></tr>
