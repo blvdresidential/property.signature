@@ -47,30 +47,34 @@
   <h2>Email Signature Generator</h2>
 
   <form id="sigForm">
-    <label>Full Name:
-      <input type="text" id="fullName">
-    </label>
-    <label>Job Title:
-      <input type="text" id="jobTitle">
-    </label>
-    <label>Property Name(s):
-      <input type="text" id="property">
-    </label>
-    <label>Property Street Address:
-      <input type="text" id="address">
-    </label>
-    <label>City, State, Zip:
-      <input type="text" id="cityStateZip">
-    </label>
-    <small style="color: #C00000; font-style: italic; font-size: 9pt;">Make sure to include suite numbers and use proper address formatting.</small>
-    <label>Property Phone:
-      <input type="text" id="phone" value="123.456.7890">
-    </label>
-    <label>Property Website:
-      <input type="text" id="website" value="http://">
-    </label>
-    <small style="color: #C00000; font-style: italic; font-size: 9pt;">Make sure to Copy & Paste your property website address directly from an address bar. Do not type it in manually. Please remove any forward slashes "/" at the end.</small>
-
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName"><br>
+  
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" id="jobTitle"><br>
+  
+    <label for="property">Property Name(s):</label>
+    <input type="text" id="property"><br>
+  
+    <label for="address">Property Street Address:</label>
+    <input type="text" id="address"><br>
+  
+    <label for="cityStateZip">City, State, Zip:</label>
+    <input type="text" id="cityStateZip"><br>
+  
+    <small style="color: #C00000; font-style: italic; font-size: 9pt;">
+      Make sure to include suite numbers and use proper address formatting.
+    </small><br><br>
+  
+    <label for="phone">Property Phone:</label>
+    <input type="text" id="phone" value="123.456.7890"><br>
+  
+    <label for="website">Property Website:</label>
+    <input type="text" id="website" value="http://"><br>
+  
+    <small style="color: #C00000; font-style: italic; font-size: 9pt;">
+      Make sure to Copy & Paste your property website address directly from an address bar. Do not type it in manually. Please remove any forward slashes "/" at the end.
+    </small>
   </form>
 
   <div class="signature-preview">
